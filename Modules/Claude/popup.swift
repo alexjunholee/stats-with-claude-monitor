@@ -30,12 +30,12 @@ internal class Popup: PopupWrapper {
         DispatchQueue.main.async {
             if !self.initialized { self.initView() }
 
-            self.util5hField?.stringValue = "\(Int(value.utilization5h * 100))%"
+            self.util5hField?.stringValue = "\(Int(round(value.utilization5h * 100)))%"
             if let reset = value.reset5h {
                 self.reset5hField?.stringValue = self.formatReset(reset)
             }
 
-            self.util7dField?.stringValue = "\(Int(value.utilization7d * 100))%"
+            self.util7dField?.stringValue = "\(Int(round(value.utilization7d * 100)))%"
             if let reset = value.reset7d {
                 self.reset7dField?.stringValue = self.formatReset(reset)
             }

@@ -76,14 +76,15 @@ public class Portal: PortalWrapper {
 
     internal func callback(_ value: Claude_Usage) {
         DispatchQueue.main.async {
-            self.util5hField?.stringValue = "\(Int(value.utilization5h * 100))%"
-            self.util7dField?.stringValue = "\(Int(value.utilization7d * 100))%"
+            self.util5hField?.stringValue = "\(Int(round(value.utilization5h * 100)))%"
+            self.util7dField?.stringValue = "\(Int(round(value.utilization7d * 100)))%"
 
             let color = Self.colorForUtilization(value.utilization5h)
-            self.circle?.toolTip = "Claude 5h: \(Int(value.utilization5h * 100))%"
+            self.circle?.toolTip = "Claude 5h: \(Int(round(value.utilization5h * 100)))%"
             self.circle?.setValue(value.utilization5h)
             self.circle?.setSegments([circle_segment(value: value.utilization5h, color: color)])
             self.circle?.setNonActiveSegmentColor(color.withAlphaComponent(0.15))
+            self.circle?.needsDisplay = true
 
             if let reset = value.reset5h {
                 self.reset5hField?.stringValue = self.formatReset(reset)
