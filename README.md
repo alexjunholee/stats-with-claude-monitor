@@ -37,6 +37,19 @@ Stats is an application that allows you to monitor your macOS system.
  - Sensors information (Temperature/Voltage/Power)
  - Bluetooth devices
  - Multiple time zone clock
+ - Claude API usage monitoring
+
+### Claude module
+
+<img src="https://github.com/alexjunholee/stats/raw/claude-module/Modules/Claude/screenshot.png" width="300">
+
+Monitors your Claude API rate limit utilization in real time (requires [Claude Code](https://claude.ai/code) CLI installed and a Claude Max/Pro subscription).
+
+- 5-hour and 7-day utilization percentage
+- Reset time countdown
+- Overage and fallback status
+
+The module works by running a lightweight local proxy that captures rate limit headers from API responses when `claude` CLI makes requests.
 
 ## FAQs
 
