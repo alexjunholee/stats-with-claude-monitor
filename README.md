@@ -41,7 +41,7 @@ Stats is an application that allows you to monitor your macOS system.
 
 ### Claude module
 
-<img src="Modules/Claude/screenshot.png" width="300">
+<img src="https://github.com/alexjunholee/stats/raw/claude-module/Modules/Claude/screenshot.png" width="300">
 
 Monitors your Claude API rate limit utilization in real time (requires [Claude Code](https://claude.ai/code) CLI installed and a Claude Max/Pro subscription).
 
