@@ -130,6 +130,7 @@ internal class ClaudeUsageReader: Reader<Claude_Usage> {
         let proc = Process()
         proc.executableURL = URL(fileURLWithPath: claudePath)
         proc.arguments = ["-p", ".", "--model", "claude-haiku-4-5-20251001", "--max-turns", "1", "--output-format", "json"]
+        proc.currentDirectoryURL = URL(fileURLWithPath: "/tmp")
         proc.environment = ProcessInfo.processInfo.environment.merging(
             ["ANTHROPIC_BASE_URL": "http://127.0.0.1:\(port)"],
             uniquingKeysWith: { _, new in new }
